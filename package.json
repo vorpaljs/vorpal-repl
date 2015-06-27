@@ -1,0 +1,51 @@
+{
+  "name": "vantage-repl",
+  "version": "0.0.1",
+  "description": "Simple REPL extension for vantage.js",
+  "main": "./lib/repl.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vantagejs/vantage-repl.git"
+  },
+  "keywords": [
+    "api",
+    "cli",
+    "repl",
+    "vantage",
+    "vantagejs"
+  ],
+  "author": "dthree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vantagejs/vantage-repl/issues"
+  },
+  "homepage": "https://github.com/vantage-js/vantage-repl#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^6.0.3"
+  },
+  "dependencies": {
+    "colors": "^1.1.0",
+    "lodash": "^3.9.1"
+  },
+  "engines": {
+    "node": ">= 0.11.16",
+    "iojs": ">= 1.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": false
+    },
+    "rules": {
+      "no-underscore-dangle": 0,
+      "no-process-exit": 0
+    }
+  }
+}
