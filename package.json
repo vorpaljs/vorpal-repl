@@ -25,10 +25,12 @@
   "homepage": "https://github.com/vantage-js/vantage-repl#readme",
   "devDependencies": {
     "mocha": "^2.2.5",
-    "should": "^6.0.3"
+    "should": "^7.0.2",
+    "vantage": "^1.0.2"
   },
   "dependencies": {
     "chalk": "^1.1.0",
+    "json-stringify-safe": "^5.0.1",
     "lodash": "^3.10.0"
   },
   "engines": {
