@@ -1,5 +1,7 @@
 # vantage-repl
 
+<img src="https://travis-ci.org/vantagejs/vantage-repl.svg" alt="Build Status" />
+
 Simple REPL extension for vantage.js
 
 ##### Installation
