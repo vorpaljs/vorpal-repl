@@ -27,7 +27,8 @@
   "devDependencies": {
     "mocha": "^2.2.5",
     "should": "^7.0.2",
-    "vorpal": "^1.0.0"
+    "vorpal": "^1.0.0",
+    "xo": "^0.7.1"
   },
   "dependencies": {
     "chalk": "^1.1.0",
@@ -40,12 +41,5 @@
   },
   "files": [
     "lib"
-  ],
-  "xo": {
-    "envs": [
-      "node",
-      "mocha"
-    ],
-    "space": true
-  }
+  ]
 }
