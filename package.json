@@ -41,5 +41,12 @@
   },
   "files": [
     "lib"
-  ]
+  ],
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "space": true
+  }
 }
