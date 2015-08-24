@@ -1,32 +1,33 @@
 {
-  "name": "vantage-repl",
+  "name": "vorpal-repl",
   "version": "1.1.4",
-  "description": "Simple REPL extension for vantage.js",
+  "description": "REPL extension for Vorpal.js",
   "main": "./lib/repl.js",
   "scripts": {
-    "test": "mocha"
+    "test": "xo && mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vantagejs/vantage-repl.git"
+    "url": "git+https://github.com/vorpaljs/vorpal-repl.git"
   },
   "keywords": [
     "api",
     "cli",
+    "immersive",
     "repl",
-    "vantage",
-    "vantagejs"
+    "vorpal",
+    "vorpaljs"
   ],
   "author": "dthree",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vantagejs/vantage-repl/issues"
+    "url": "https://github.com/vorpaljs/vorpal-repl/issues"
   },
-  "homepage": "https://github.com/vantage-js/vantage-repl#readme",
+  "homepage": "https://github.com/vorpaljs/vorpal-repl#readme",
   "devDependencies": {
     "mocha": "^2.2.5",
     "should": "^7.0.2",
-    "vantage": "^1.0.2"
+    "vorpal": "^1.0.0"
   },
   "dependencies": {
     "chalk": "^1.1.0",
@@ -40,14 +41,11 @@
   "files": [
     "lib"
   ],
-  "eslintConfig": {
-    "env": {
-      "node": true,
-      "browser": false
-    },
-    "rules": {
-      "no-underscore-dangle": 0,
-      "no-process-exit": 0
-    }
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "space": true
   }
 }

@@ -1,93 +1,88 @@
-"use strict";
+'use strict';
 
-var assert = require("assert")
-  , should = require("should")
-  , Vantage = require("vantage")
-  , repl = require("./../lib/repl")
-  ;
+require('assert');
 
-var vantage
-  , stdout = ""
-  ;
+var should = require('should');
+var Vantage = require('vorpal');
+var repl = require('./../lib/repl');
 
-global.foo = "bar";
+var vorpal;
+var stdout = '';
+
+global.foo = 'bar';
 global.blob = {
-  json: { "uncle": "sam", "aunt": "mary" },
+  json: {'uncle': 'sam', 'aunt': 'mary'},
   circular: {
-    gotcha: void 0,
-    innocent: "bystander"
+    gotcha: undefined,
+    innocent: 'bystander'
   }
 };
 global.blob.circular.gotcha = global.blob.circular;
 
 function stdoutFn(data) {
   stdout += data;
-  return "";
+  return '';
 }
 
-describe("vantage-repl", function() {
-
-  describe("root", function() {
-
-    before("vantage preps", function() {
-      vantage = new Vantage().pipe(stdoutFn).show();
+describe('vorpal-repl', function () {
+  describe('root', function () {
+    before('vorpal preps', function () {
+      vorpal = new Vantage().pipe(stdoutFn).show();
     });
 
-    beforeEach("vantage preps", function() {
-      stdout = "";
+    beforeEach('vorpal preps', function () {
+      stdout = '';
     });
 
-    it("should exist and be a function", function() {
+    it('should exist and be a function', function () {
       should.exist(repl);
-      repl.should.be.type("function");
+      repl.should.be.type('function');
     });
 
-    it("should import into Vantage", function() {
-      (function(){
-        vantage.use(repl);
+    it('should import into Vantage', function () {
+      (function () {
+        vorpal.use(repl);
       }).should.not.throw();
     });
 
-    it("should log into REPL", function(done) {
-      vantage.exec("repl", function(err, data){
+    it('should log into REPL', function (done) {
+      vorpal.exec('repl', function (err, data) {
         should.not.exist(err);
-        data.should.containEql("Entering REPL Mode.");
+        data.should.containEql('Entering REPL Mode.');
         done();
       });
     });
 
-    it("should execute JS", function(done) {
-      vantage.exec("Math.pow(6 * 6, 2);", function(err, data){
+    it('should execute JS', function (done) {
+      vorpal.exec('Math.pow(6 * 6, 2);', function (err, data) {
         should.not.exist(err);
         data.should.equal(1296);
         done();
       });
     });
 
-    it("should have access to global", function(done) {
-      vantage.exec("foo", function(err, data){
+    it('should have access to global', function (done) {
+      vorpal.exec('foo', function (err, data) {
         should.not.exist(err);
-        data.should.equal("bar");
+        data.should.equal('bar');
         done();
       });
     });
 
-    it("should stringify JSON", function(done) {
-      vantage.exec("blob.json", function(err){
+    it('should stringify JSON', function (done) {
+      vorpal.exec('blob.json', function (err) {
         should.not.exist(err);
-        stdout.replace(/\n/g, "").replace(/\\/g, "").should.equal('{  "uncle": "sam",  "aunt": "mary"}');
+        stdout.replace(/\n/g, '').replace(/\\/g, '').should.equal('{  "uncle": "sam",  "aunt": "mary"}');
         done();
       });
     });
 
-    it("should nail circular references like a boss", function(done) {
-      vantage.exec("blob.circular", function(err, data){
+    it('should nail circular references like a boss', function (done) {
+      vorpal.exec('blob.circular', function (err) {
         should.not.exist(err);
         done();
       });
     });
-
   });
-
 });
 

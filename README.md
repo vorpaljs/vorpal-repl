@@ -1,27 +1,27 @@
-# vantage-repl
+# vorpal-repl
 
-<img src="https://travis-ci.org/vantagejs/vantage-repl.svg" alt="Build Status" />
+<img src="https://travis-ci.org/vorpaljs/vorpal-repl.svg" alt="Build Status" />
 
-Simple REPL extension for vantage.js
+REPL extension for [Vorpal.js](https://. Installs the `repl` command, which drops you into a REPL session within the context of the application. Built in to Vantage.js by default.
 
 ##### Installation
 
 ```bash
-npm install vantage-repl
-npm install vantage
+npm install vorpal-repl
+npm install vorpal
 ```
 
 ##### Programmatic use
 
 ```js
 // index.js
-var Vantage = require('vantage')
-  , repl = require('vantage-repl)
+var Vorpal = require('vorpal')
+  , repl = require('vorpal-repl)
   ;
 
-var vantage = Vantage();
+var vorpal = Vorpal();
 
-vantage
+vorpal
   .delimiter('node~$')
   .use(repl)
   .show();
@@ -44,10 +44,10 @@ node~$
 
 ```bash
 $
-$ vantage 192.168.0.100:4000
+$ vorpal 192.168.0.100:4000
 websvr~$ 
-websvr~$ use vantage-repl
-Successfully installed vantage-repl
+websvr~$ use vorpal-repl
+Successfully installed vorpal-repl
 websvr~$ 
 websvr~$ repl
 Entering REPL Mode. To exit, type 'exit'.
