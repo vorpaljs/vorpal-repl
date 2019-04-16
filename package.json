@@ -28,12 +28,12 @@
     "mocha": "^2.2.5",
     "should": "^7.0.2",
     "vorpal": "^1.0.0",
-    "xo": "^0.7.1"
+    "xo": "^0.24.0"
   },
   "dependencies": {
     "chalk": "^1.1.0",
     "json-stringify-safe": "^5.0.1",
-    "lodash": "^3.10.0"
+    "lodash": "^4.17.0"
   },
   "engines": {
     "node": ">= 0.11.16",
